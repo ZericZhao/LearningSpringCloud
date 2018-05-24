@@ -21,6 +21,6 @@ public class ConsumerController {
 
     @RequestMapping("/hello-world")
     public String helloWorld() {
-        return consumerService.HelloService();
+        return consumerService.helloService();
     }
 }

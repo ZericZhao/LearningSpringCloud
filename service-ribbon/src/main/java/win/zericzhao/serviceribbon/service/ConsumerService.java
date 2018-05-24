@@ -1,5 +1,6 @@
 package win.zericzhao.serviceribbon.service;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -18,7 +19,12 @@ public class ConsumerService {
         this.restTemplate = restTemplate;
     }
 
-    public String HelloService() {
+    @HystrixCommand(fallbackMethod = "helloError")
+    public String helloService() {
         return restTemplate.getForObject("http://SERVICE-HELLO-WORLD/service-instances/service-hello-world",String.class);
+    }
+
+    public String helloError() {
+        return "Hello World Service Error!";
     }
 }

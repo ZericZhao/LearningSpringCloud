@@ -1,0 +1,14 @@
+server:
+  port: 8767
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      label: master
+      server:
+        git:
+          uri: https://github.com/ZericZhao/LearningSpringCloud/
+          search-paths: config-files
+          username: ZericZhao
+          password:

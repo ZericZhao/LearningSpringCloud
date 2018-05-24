@@ -25,6 +25,9 @@ public class HelloWorldController {
     @Value("${server.port}")
     private String port;
 
+    @Value("${customer.name}")
+    private String name;
+
     public HelloWorldController(DiscoveryClient discoveryClient){
         this.discoveryClient = discoveryClient;
     }
@@ -32,6 +35,6 @@ public class HelloWorldController {
     @RequestMapping(value = "/service-instances/{applicationName}", method = RequestMethod.GET)
     public String serviceInstancesByApplicationName(
             @PathVariable String applicationName){
-        return applicationName+" from port: "+port;
+        return applicationName+" from port: "+port+" Hello, "+name;
     }
 }

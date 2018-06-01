@@ -1,5 +1,5 @@
 customer:
-  name: Zeric Zhao
+  name: Zeric
 spring:
   rabbitmq:
     host: 192.168.101.128

@@ -6,8 +6,8 @@ spring:
       profile: dev
       label: master
       uri: http://localhost:8767
-  rabbitmq:
-    host: localhost
-    port: 5672
 server:
-  port: 8763
+  port: 8762
+management:
+  security:
+    enabled: false
